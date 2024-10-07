@@ -17,7 +17,7 @@ const Attendance =  mongoose.model("Attendance", AttendanceSchema);
 var StudentSchema = new Schema({
     student_id: {type:Number, required: true,unique:true}, //PK
     email:{type:String, required:true,unique:true},
-    password:{type:String, required:true,unique:true},
+    password:{type:String},
     name:{type:String, required:true},
     dob: {type: Date, required: true},
     gender:{type:String, required:true},
@@ -26,6 +26,7 @@ var StudentSchema = new Schema({
     date_of_join: {type: Date, required: true},
     parent_name:{type:String, required:true},
     issue: [{ type: Schema.Types.ObjectId, ref: 'Issue' }],
+    attendance: [{ type: Schema.Types.ObjectId, ref: 'Attendance' }]
    });
 
 const Student = mongoose.model("Student", StudentSchema);

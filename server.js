@@ -6,6 +6,8 @@ const verifyTokenRouter = require("./routes/index-router");
 const classroomRouter = require("./routes/classroom-router");
 const subjectRouter = require("./routes/subject-router");
 const timetableRouter = require("./routes/timetable-router");
+const studentRouter = require("./routes/student-router");
+const attendanceRouter = require("./routes/attendance-router");
 const authenticate= require("./middleware/authenticate ");
 const logger = require("./middleware/loger");
 
@@ -30,10 +32,17 @@ app.use("/api/teachers", teacherRouter);
 // app.use("/api/teachers",[authenticate], teacherRouter);
 app.use("/api/signUp", signUpRouter);
 app.use("/api/login", loginRouter);
-app.use("/api/index", [authenticate], verifyTokenRouter)
-app.use("/api/classroom", [authenticate], classroomRouter)
-app.use("/api/subject",[authenticate], subjectRouter)
+app.use("/api/index", verifyTokenRouter)
+app.use("/api/classroom",classroomRouter)
+app.use("/api/subject",subjectRouter)
+
+// app.use("/api/index", [authenticate], verifyTokenRouter)
+// app.use("/api/classroom", [authenticate], classroomRouter)
+// app.use("/api/subject",[authenticate], subjectRouter)
+
 app.use("/api/timetable", timetableRouter)
+app.use("/api/student", studentRouter)
+app.use("/api/attendance", attendanceRouter)
 // app.use("/api/timetable",[authenticate], timetableRouter)
 
 
