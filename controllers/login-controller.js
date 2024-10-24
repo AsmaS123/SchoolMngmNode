@@ -31,7 +31,7 @@ const logIn = async(req,res,next) => {
         // console.log(result,'result')
         // token = jwt.sign({ id: existingUser._id,email: existingUser.email }, process.env.SECRET_KEY);
     }
-    return res.status(200).json({email: existingUser.email,token:token});
+    return res.status(200).json({email: existingUser.email,token:token, roles:['admin']});
 }
 
 
