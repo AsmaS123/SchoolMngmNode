@@ -22,9 +22,9 @@ var corsOptions = {
 };
 
 const app = express();
-
+app.use(cors());
 // app.use(cors(corsOptions));
-app.use(cors({ origin: ["http://localhost:3000", "https://origin2.com","*", "http://54.82.11.113:3000/"] }));
+// app.use(cors({ origin: ["http://localhost:3000", "https://origin2.com","*", "http://54.82.11.113:3000/"] }));
 
 app.set("view engine", "ejs");
 app.use(express.json());
