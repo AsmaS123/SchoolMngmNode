@@ -46,8 +46,8 @@ app.use("/api/attendance", attendanceRouter)
 // app.use("/api/timetable",[authenticate], timetableRouter)
 
 
-app.listen(80, () => {
-  logger.log("info", `App listening on port 80!`);
+app.listen(5003, () => {
+  logger.log("info", `App listening on port 5003!`);
 });
 
 
